@@ -95,7 +95,7 @@ export const App: React.FC = () => {
         keptItems: [{ ...MOCK_GARMENTS[0], selectedSize: 'Free Size', selectedColor: '#800020' }],
         returnedItems: [],
         shopBillAmount: 3499,
-        payoutAmount: 3219,
+        payoutAmount: 3307, // 94.5% payout (5.5% Rivaat commission)
       },
       {
         shopId: 'shop-2',
@@ -104,7 +104,7 @@ export const App: React.FC = () => {
         keptItems: [{ ...MOCK_GARMENTS[2], selectedSize: '40', selectedColor: '#D97706' }],
         returnedItems: [{ ...MOCK_GARMENTS[3], selectedSize: '40', selectedColor: '#FFFFFF' }],
         shopBillAmount: 2199,
-        payoutAmount: 2023,
+        payoutAmount: 2078, // 94.5% payout (5.5% Rivaat commission)
       }
     ]
   });

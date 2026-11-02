@@ -85,7 +85,7 @@ export const ShopOwnerDashboard: React.FC<ShopOwnerDashboardProps> = ({
   }, [shopGarments]);
 
   const totalNetPayout = useMemo(() => {
-    return Math.round(totalSalesRevenue * 0.92); // 92% direct payout to merchant
+    return Math.round(totalSalesRevenue * 0.945); // 94.5% direct payout to merchant (Only 5.5% Rivaat commission)
   }, [totalSalesRevenue]);
 
   // Garments sorted by sales performance
@@ -266,12 +266,12 @@ export const ShopOwnerDashboard: React.FC<ShopOwnerDashboardProps> = ({
           <div className="flex items-center gap-2.5 truncate">
             <Crown size={15} className="text-amber-400 flex-shrink-0" />
             <span className="truncate">
-              <strong>Doorstep Sale Settled:</strong> Order #{latestSettlementEvent.orderId} • Customer paid at doorstep • Net Payout: <strong className="text-amber-300">₹{Math.round(latestSettlementEvent.totalAmount * 0.92).toLocaleString('en-IN')}</strong> credited to your shop bank account!
+              <strong>Doorstep Sale Settled:</strong> Order #{latestSettlementEvent.orderId} • Customer paid at doorstep • Net Payout: <strong className="text-amber-300">₹{Math.round(latestSettlementEvent.totalAmount * 0.945).toLocaleString('en-IN')}</strong> credited to your shop bank account!
             </span>
           </div>
           <div className="flex items-center gap-2 flex-shrink-0">
             <span className="px-2 py-0.5 rounded-md bg-stone-800 text-[10px] text-emerald-400 border border-stone-700 font-bold">
-              ✓ 92% Payout Direct
+              ✓ 94.5% Payout Direct (5.5% Cut)
             </span>
             <button onClick={() => setShowSettlementAlert(false)} className="text-stone-400 hover:text-white">
               ✕
@@ -393,11 +393,11 @@ export const ShopOwnerDashboard: React.FC<ShopOwnerDashboardProps> = ({
           </div>
         </div>
 
-        {/* Metric 3: Net Bank Payout (92%) */}
+        {/* Metric 3: Net Bank Payout (94.5%) */}
         <div className="bg-white dark:bg-[#161311] p-5 rounded-2xl border border-stone-200/90 dark:border-stone-800/80 shadow-xs hover:border-amber-400/60 transition flex flex-col justify-between">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-stone-500 dark:text-stone-400 uppercase tracking-wide">
-              Net Dukaan Payout (92% Kept)
+              Net Dukaan Payout (94.5% Kept)
             </span>
             <div className="w-8 h-8 rounded-xl bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 flex items-center justify-center border border-sky-200 dark:border-sky-800/60">
               <Crown size={15} />
@@ -408,7 +408,7 @@ export const ShopOwnerDashboard: React.FC<ShopOwnerDashboardProps> = ({
               ₹{totalNetPayout.toLocaleString('en-IN')}
             </div>
             <div className="flex items-center gap-1.5 mt-1 text-[11px] font-bold text-sky-700 dark:text-sky-400">
-              <span>✓ Direct UPI/Bank settlement (0% locked)</span>
+              <span>✓ Direct UPI/Bank settlement (Only 5.5% Rivaat Cut)</span>
             </div>
           </div>
         </div>

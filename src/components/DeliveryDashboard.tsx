@@ -152,7 +152,7 @@ export const DeliveryDashboard: React.FC<DeliveryDashboardProps> = ({
       } else {
         map[sId].keptItems.push(item);
         map[sId].shopSubtotal += item.price;
-        map[sId].payoutDue += item.price * 0.92; // 92% merchant payout
+        map[sId].payoutDue += item.price * 0.945; // 94.5% merchant payout (Only 5.5% Rivaat commission)
       }
     });
     return Object.values(map);
